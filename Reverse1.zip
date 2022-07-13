@@ -1,0 +1,52 @@
+import tkinter as tk 
+
+def reverse():
+	txt = box1.get()
+	box2.delete(0,tk.END)
+	box2.insert(0,txt[::-1])
+
+def clear():
+	box1.delete(0,tk.END)
+	box2.delete(0,tk.END)
+
+	
+app = tk.Tk()
+app.title("Reverse")
+app.geometry("500x500")
+
+app.resizable(False,False)
+
+label1 = tk.Label(app, text="Number :" , font=("Arial",25))
+label1.place(x=20,y=20)
+
+label2 = tk.Label(app, text="Reverse :" , font=("Arial",25))
+label2.place(x=20,y=80)
+
+box1 = tk.Entry(app, font=("Arial,25"))
+box1.place(x=180,y=30)
+
+box2 = tk.Entry(app, font=("Arial,25"))
+box2.place(x=180,y=90)
+
+button1 = tk.Button(app,text="Reverse",font=("Arial",15),bg="cyan",command=reverse )
+button1.place(x=180,y=150,width=100)
+
+button2 = tk.Button(app,text="Clear",font=("Arial",15),bg="Orange",command=clear)
+button2.place(x=280,y=150,width=100)
+
+# img = tk.PhotoImage(file="protest.png")
+# label = tk.Label(image=img)
+# label.place(x=80,y=300,width=260,height=250)
+button1 = tk.Button(app,text="Add",font=("Arial",15),bg="cyan" )
+button1.place(x=580,y=50,width=100)
+
+# button2 = tk.Button(app,text="Sub",font=("Arial",15),bg="Orange",command=clear)
+# button2.place(x=580,y=100,width=100)
+
+# button2 = tk.Button(app,text="Mul",font=("Arial",15),bg="Orange",command=clear)
+# button2.place(x=580,y=150,width=100)
+
+# button2 = tk.Button(app,text="Div",font=("Arial",15),bg="Orange",command=clear)
+# button2.place(x=580,y=200,width=100)
+
+app.mainloop()
